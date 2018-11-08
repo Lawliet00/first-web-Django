@@ -1,0 +1,103 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>PRUEBA DE BONDAD DE AJUSTES</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+<div class="changes-info contendor-info">
+	<p>
+		Las pruebas de bondad de ajuste miden la compatibilidad de una muestra aleatoria con una función teorética de distribución de probabilidades. En otras palabras, estas pruebas demuestran qué bien la distribución seleccionada se ajusta a sus datos.
+	</p>
+	<br>
+	<h1 align="center"><strong>PRUEBA DE BONDAD DE AJUSTE CHI-CUADRADO</strong></h1>
+	<p>
+		Se utiliza para decidir cuando un conjunto de datos se ajusta a una distribución dada.
+		<br><br>
+		Considérese una muestra aleatoria de tamaño n de la distribución de una variable aleatoria X dividida en k clases exhaustivas e incompatibles, y sea Ni  i = 1, 2, …, k. el número de observaciones en la i-ésima clase. Considérese la hipótesis nula H0: F(x)=F0(x)
+		<br><br>
+		en donde el modelo de probabilidad propuesto F0(x) se encuentra especificado de manera completa, con respecto a todos los parámetros.
+		<br><br>
+		Es posible, pues, calcular pi: probabilidad de obtener una observación en la i-ésima clase, bajo H0. Es obvio, también, que 
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad1.gif" alt="">
+		</div>
+	</p>
+	<p>
+		Sea ni la realización de Ni para i = 1,2,…, k de manera que
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad2.gif" alt="">
+		</div>
+	</p>
+	<p>
+		La probabilidad de obtener de manera exacta ni observaciones en la i-ésima clase es
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad3.gif" alt="">
+		</div>
+	</p>
+	<p>
+		Dado que existen k categorías mutuamente excluyentes con probabilidades p1, p2, …, pk; entonces bajo la hipótesis nula la probabilidad de la muestra agrupada es igual a la función de probabilidad de una distribución multinomial determinada.
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad4.gif" alt="">
+		</div>
+	</p>
+	<p>
+		Para deducir una prueba estadística para H0, considérese el caso de k = 2. Este es el caso de la distribución binomial con x = n1, p = p1, n-x =n2 y 1-p =p2. Sea la variable aleatoria estandarizada:
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad5.gif" alt="">
+		</div>
+	</p>
+	<p>
+		para n grande, esta variable aleatoria se distribuye según una N(0;1). Además sabemos que el cuadrado de una variable aleatoria N(0,1) se distribuye según una chi-cuadrado con un grado de libertad. Entonces el estadístico
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad6.gif" alt="">
+		</div>
+	</p>
+	<p>
+		Si se sigue este razonamiento, puede demostrarse que para k≥2 categorías distintas
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad7.gif" alt="">
+		</div>
+	</p>
+	<p>
+		Nótese que Ni es la frecuencia observada en la i-ésima clase y npi la esperada bajo la hipótesis nula.
+		<br><br>
+		Esta estadística recibe el nombre de prueba de bondad de ajuste chi-cuadrada de Pearson.
+		<br><br>
+		Si existe una concordancia perfecta entre las frecuencias observadas y las esperadas, el estadístico tendrá un valor igual a cero; por otra parte si las discrepancias entre estas frecuencias son grandes, el estadístico tomará un valor, también muy grande. Por ello se desprende que para un valor dado del error de tipo I, la región crítica estará en el extremo superior la distribución chi-cuadrada con k-1 grado de libertad.
+		<br><br>
+		Una ventaja de la prueba de bondad de ajuste chi-cuadrada es que para valores grandes de n, la distribución límite chi-cuadrada de la estadística, es independiente de la forma que tenga la distribución F0(x) propuesta en la hipótesis H0. Como consecuencia de esto se tiene que la prueba de bondad se utiliza también para distribuciones de probabilidad en las que F0(x) es continua. Sin embargo, debe insistirse en que la prueba de bondad es discreta, en el sentido de que ésta compara frecuencias que se observan y se esperan para un número finito de categorías.
+		<br><br>
+		De acuerdo con lo anterior, si F0(x) es continua, la prueba no compara las frecuencias que se observan aisladas con la función de densidad propuesta tal y como implica la hipótesis nula; sino, más bien, la comparación se lleva a cabo aproximando la distribución continua bajo H0 con un número finito de intervalos de clase.
+		<br><br>
+		No obstante, esta prueba es un procedimiento razonablemente adecuado para probar suposiciones de normalidad siempre y cuando el tamaño de la muestra sea suficientemente grande.
+		<br><br>
+		¿Qué tan grande debe ser el tamaño de la muestra? Se ha encontrado que con n igual a 5 veces el número de clases, los resultados son aceptables. Una regla conservadora es que ninguna clase tenga una frecuencia inferior a 5; si esto sucediera, se agruparían clases vecinas.
+		<br><br>
+		A menos que se especifique una hipótesis alternativa que consista en un modelo alternativo particular F1(x), la potencia de la prueba (probabilidad de que un valor se encuentre en la región crítica cuando H0 es falsa) es muy difícil de determinar. Por otra parte, puede demostrarse que la potencia tiende a 1 cuando n tiende  a infinito. Esto implica que cuando n es muy grande es casi seguro que se rechaza H0, pues es muy difícil especificar una F0(x) lo suficientemente cercana a la distribución. Por tanto esta prueba es cuestionable para muestras muy grandes.
+		<br><br>
+		Recuérdese que el modelo de probabilidad propuesto F0(x) se especificó completamente. Por regla general, solo se conoce la normalidad de F0(x), necesitándose estimar la media y la varianza, en consecuencia las frecuencias esperadas npi; i =1,2,…,k no pueden determinarse.
+		<br><br>
+		Sea T el estadístico del parámetro desconocido θ de F0(x). Tanto Ni (frecuencias observadas) como npi(T) frecuencias esperadas son variables aleatorias, donde pi(T) indica que la probabilidad bajo la hipótesis nula es función del estadístico T de θ.
+		<br><br>
+		Puede demostrarse que si T es el estimador de máxima verosimilitud de θ, entonces:
+		<div align="center">
+			<img src="http://www.juntadeandalucia.es/averroes/centros-tic/14002996/helvia/aula/archivos/repositorio/250/295/html/estadistica/imgBondad/bondad8.gif" alt="">
+		</div>
+	</p>
+	<p>
+		en donde r es el número de parámetros que se está intentando estimar.
+	</p>
+
+	<h1 align="center"><strong>EJEMPLO</strong></h1>
+	<div align="center">
+		<iframe width="853" height="480" src="https://www.youtube.com/embed/NPeP0yrXYRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<br>
+		<p>Para mas videos relacionados visita este canal de youtube <strong>Educatina</strong></p>
+	</div>
+	<br><br>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>FORMULACIÓN GENERAL</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+<div class="changes-info contendor-info">
+	<p>
+		Dentro de las formulaciones se concede la reperesentación de varios casos en los cuales se intenta sastifacer algunas necesidades pór lo cual Elementos básicos de un modelo matemático Un modelo matemático es producto de la abstracción de un sistema real, eliminando las complejidades y haciendo suposiciones pertinentes; se aplica una técnica matemática y se obtiene una representación simbólica del mismo.
+		<br><br>
+		Un modelo matemático consta al menos de tres elementos o condiciones básicas: Las Variables de decisión, la Función Objetivo y las Restricciones. Variables de decisión y parámetros Las variables de decisión son incógnitas que deben ser determinadas a partir de la solución del modelo. Los parámetros representan los valores conocidos del sistema o que se pueden controlar. Las variables de decisión se representan por: X1, X2, X3,…, Xn ó Xi, i = 1, 2, 3,…, n.
+		<br><br>
+		Función Objetivo La función objetivo es una relación matemática entre las variables de decisión, parámetros y una magnitud que representa el objetivo o producto del sistema. Es la medición de la efectividad del Modelo formulado en función de las variables. Determina lo que se va optimizar (Maximizar o Minimizar). La solución ÓPTIMA se obtiene cuando el valor de la Función Objetivo es óptimo (valor máximo o mínimo), para un conjunto de valores factibles de las variables. Es decir, hay que reemplazar las variables obtenidas X1, X2, X3,…, Xn; en la Función Objetivo Z = f (C1X1, C2X2, C3X3,…, CnXn) sujeto a las restricciones del modelo matemático. Por ejemplo, si el objetivo es minimizar los costos de operación, la función objetivo debe expresar la relación entre el costo y las variables de decisión, siendo el resultado el menor costo de las soluciones factibles obtenidas. Restricciones Las restricciones son relaciones entre las variables de decisión y los recursos disponibles.
+		<br><br>
+		Las restricciones del modelo limitan el valor de las variables de decisión. Se generan cuando los recursos disponibles son limitados. En el Modelo se incluye, adicionalmente de las restricciones, la Restricción de No Negatividad de las Variables de decisión, o sea: Xi = 0.
+	</p>
+	<br><br>
+
+</div>
+
+{% endblock %}

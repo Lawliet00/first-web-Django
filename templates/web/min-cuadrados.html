@@ -1,0 +1,40 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>MÉTODO DE MINIMOS CUADRADOS</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+
+<div class="changes-info contendor-info">
+    <br>
+    <p>
+        Es un procedimiento de análisis numérico en la que, dados un conjunto de datos (pares ordenados y familia de funciones), se intenta determinar la función continua que mejor se aproxime a los datos (línea de regresión o la línea de mejor ajuste), proporcionando una demostración visual de la relación entre los puntos de los mismos. En su forma más simple, busca minimizar la suma de cuadrados de las diferencias ordenadas (llamadas residuos) entre los puntos generados por la función y los correspondientes datos.
+        <br>
+        Este método se utiliza comúnmente para analizar una serie de datos que se obtengan de algún estudio, con el fin de expresar su comportamiento de manera lineal y así minimizar los errores de la data tomada.
+        <br>
+        La creación del método de mínimos cuadrados generalmente se le acredita al matemático alemán Carl Friedrich Gauss, quien lo planteó en 1794 pero no lo publicó sino hasta 1809. El matemático francés Andrien-Marie Legendre fue el primero en publicarlo en 1805, este lo desarrolló de forma independiente.
+    </p>
+
+
+    <h1 align="center"><strong>DEFINICIÓN</strong></h1>
+    <p>
+        Su expresión general se basa en la ecuación de una recta <strong>y = mx + b</strong>. Donde <strong>m</strong> es la pendiente y <strong>b</strong> el punto de corte, y vienen expresadas de la siguiente manera:
+    </p>
+    <div align="center">
+        <img src="{% static 'images/minimos-cuadrados/minimos-cuadrados.png' %}" alt="">
+    </div>
+    <br><br>
+    <h1 align="center"><strong>VIDEO DEMOSTRATIVO</strong></h1>
+
+    <div align="center">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/gUdU6BgnJ2c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <p>Para mas videos relacionados visita este canal de youtube <strong>Educatina</strong></p>
+    </div>
+    <br><br>
+
+</div>
+
+{% endblock %}

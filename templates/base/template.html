@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <title>Teoria de Decisiones</title>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Contenido</h2>
+    <ul>
+      <li><a href="/">Estimación de parametros</a>
+        <ul>
+          <li><a href="/criterios-estimados">Introducción criterios para estimados</a></li>
+        </ul>
+      </li>
+      <li><a href="/max-verosimilitud">Estimados de maxima-verosimilitud</a></li>
+      <li><a href="/min-cuadrados">Métodos de minimos cuadrados</a></li>
+      <li><a href="/ley-de-correlacion">Ley de correlación</a></li>
+      <li><a href="/intervalo-de-confianza">Intervalo de confianza</a></li>
+      <li><a href="/distribucion-t-student">Distribución T de Student</a></li>
+      <li><a href="/distribucion-chi-cuadrados">Distribución Chi-Cuadrados</a></li>
+      <li><a href="/prueba-hipotesis">Prueba de Hipotesis</a>
+        <ul>
+          <li><a href="/prueba-hipotesis/formulacion-general">Formulación general</a></li>
+          <li><a href="/prueba-hipotesis/distribucion-normal-de-varianza-conocida">Distribución normal de varianza conocida</a></li>
+          <li><a href="/prueba-hipotesis/prueba-de-bondad-de-ajuste">Prueba de la bondad de ajuste</a></li>
+          <li><a href="/prueba-hipotesis/validacion-de-modelos">Validación de modelos</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="contenido abrir">
+    <div class="header">
+      <!-- <button class="btn-menu menu-bar"><i class="glyphicon glyphicon-th-list icon"></i></button>
+        </button> -->
+      <h1 style="margin-left:32%;">Teoria de Decisiones</h1>
+    </div>
+    <br><br><br>
+    {% block SubTitle%} {% endblock %}
+      
+    {% block content %} {% endblock %}
+
+    <div class="footer">
+      <div>
+        <h5>
+          Autores:<strong> Maria Rivera V-23.718.791 </strong> - <strong> Juan Rosas V-25.916.407 IST-8S-D01</strong>
+
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

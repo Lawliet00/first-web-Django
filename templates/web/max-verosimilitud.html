@@ -1,0 +1,124 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>ESTIMACIÓN DE MÁXIMA VEROSIMILITUD</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+
+<div class="changes-info contendor-info">
+    <br>
+    <p>
+        La idea fundamental de este método es tomar como estimación del parámetro estudiado el valor que haga máxima la probabilidad de obtener la muestra observada.
+        <br><br>
+        Para ilustrar este método, imaginemos la siguiente situación: queremos estimar la probabilidad p de que salga cara en el lanzamiento de una moneda no necesariamente regular.
+
+        Para ello procedemos de la siguiente manera: lanzamos la moneda cinco veces y obtenemos la siguiente secuencia:
+
+        <h1 align="center"><strong>C + C C +</strong></h1>
+    </p>
+    <p>
+        Una manera aparentemente razonable de estimar p sería evaluar la probabilidad de obtener esta muestra para diferentes valores de p y quedarnos con el valor que haga máxima dicha probabilidad. En nuestro caso, debemos calcular:
+    </p>
+    <br>
+
+    <div align="center">
+        <img src="{% static 'images/Max-verosimilitud/formula1.gif' %}" alt="">
+    </div>
+
+    <br><br>
+    <p>
+        para todos los posibles valores de p, es decir, para todo valor real entre 0 y 1. Es lo que se muestra en la siguiente tabla, en la que se han simplificado los posibles valores de p tomando incrementos de 0,1:
+    </p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Valor de p</th>
+                    <th>Probabilidad de la muestra observada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Success">
+                    <td>0.0</td>
+                    <td>0.0000</td>
+                </tr>
+                <tr class="Success">
+                    <td>0.1</td>
+                    <td>0.0008</td>
+                </tr>
+                <tr class="Success">
+                    <td>0.2</td>
+                    <td>0.0051</td>
+                </tr>
+                <tr class="Success">
+                    <td>0.3</td>
+                    <td>0.0132</td>
+                </tr>
+                <tr class="Success">
+                    <td>0.4</td>
+                    <td>0.0230</td>
+                </tr>
+                <tr class="Success">
+                    <td>0.5</td>
+                    <td>0.0313</td>
+                </tr>
+                <tr class="Danger">
+                    <td><strong>0.6</strong></td>
+                    <td><strong>0.0346</strong></td>
+                </tr>
+                <tr class="Success">
+                    <td>0.7</td>
+                    <td>0.0309</td>
+                </tr>
+                <tr class="Success">
+                    <td>0.8</td>
+                    <td>0.0205</td>
+                </tr>
+                <tr class="Success">
+                    <td>0.9</td>
+                    <td>0.0073</td>
+                </tr>
+                <tr class="Success">
+                    <td>1.0</td>
+                    <td>0.0000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        Como puede observarse, el valor para el que se obtiene la máxima probabilidad es 0,6. Por tanto, dicho valor será la estimación máximo verosímil (EMV) de p.
+    </p>
+    <div align="center">
+        <img src="{% static 'images/Max-verosimilitud/formula2.gif' %}" alt="">
+    </div>
+    <br>
+    <p>
+        Si analizamos este resultado es fácil darse cuenta que la EMV obtenida coincide con la frecuencia relativa del número de caras (Fr (C) = 3/5 = 0,6), por lo que podemos preguntarnos ¿se trata de un resultado casual o es generalizable? Para responder a esta cuestión volvamos al cálculo de la probabilidad de nuestra muestra, pero aprovechemos para hacerlo más general. Supongamos que hemos efectuado n lanzamientos de la moneda de los que k (k <= n) han sido cara sin que importe el orden en que han salido. La probabilidad de dicho suceso viene dada por: </p> <br>
+            <div align="center">
+                <img src="{% static 'images/Max-verosimilitud/formula3.gif' %}" alt="">
+            </div>
+            <br>
+            <p>
+                y, si suponemos que los valores n y k son conocidos, esta probabilidad puede expresarse como una función L(p) del parámetro p, exclusivamente. A dicha función se le llama función de verosimilitud y puede definirse como la función de densidad conjunta de la muestra (probabilidad de obtener la muestra observada, en nuestro caso), pero considerada como función del parámetro. Por tanto, es posible maximizarla utilizando las técnicas conocidas de cálculo y asumiendo la restricción de que 0 <= p <=1. Es decir, derivamos L(p) e igualamos a cero. Aunque, los cálculos suelen facilitarse al aplicar el hecho de que si una función (positiva) alcanza un máximo en un punto dado, el logaritmo de dicha función alcanzará un máximo en el mismo punto: </p> <br>
+                    <div align="center">
+                        <img src="{% static 'images/Max-verosimilitud/formula4.gif' %}" alt="">
+                        <img src="{% static 'images/Max-verosimilitud/formula5.gif' %}" alt="">
+                    </div>
+                    <br>
+                    <p>
+                        Para ser rigurosos debemos comprobar que se trata de un máximo. Una manera de hacerlo es demostrar que la derivada segunda de L(p) (o de su logaritmo) en el punto k/n es negativa. En nuestro caso es fácil ver que la segunda derivada siempre es negativa:
+                    </p>
+                    <br>
+                    <div align="center">
+                        <img src="{% static 'images/Max-verosimilitud/formula7.gif' %}" alt="">
+                    </div>
+                    <br>
+                    <p>
+                        Es decir, acabamos de demostrar que la frecuencia relativa es el estimador máximo verosímil de la probabilidad de un determinado suceso (en nuestro ejemplo que salga cara). La metodología que acabamos de utilizar para determinar el estimador máximo verosímil se denomina método de la máxima verosimilitud.
+                    </p>
+                    <br><br>
+</div>
+
+{% endblock %}

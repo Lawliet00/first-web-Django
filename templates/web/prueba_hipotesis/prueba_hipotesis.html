@@ -1,0 +1,47 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>PRUEBA DE HIPOTESIS</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+
+<div class="changes-info contendor-info">
+
+	<p>
+		Al realizar pruebas de hipótesis, se parte de un valor supuesto (hipotético) en parámetro poblacional. Después de recolectar una muestra aleatoria, se compara la estadística muestral, así como la media (x), con el parámetro hipotético, se compara con una supuesta media poblacional (). Después se acepta o se rechaza el valor hipotético, según proceda. Se rechaza el valor hipotético sólo si el resultado muestral resulta muy poco probable cuando la hipótesis es cierta.
+		<br><br>
+		<strong>Etapa</strong> 1.- Planear la hipótesis nula y la hipótesis alternativa. La hipótesis nula (H0) es el valor hipotético del parámetro que se compra con el resultado muestral resulta muy poco probable cuando la hipótesis es cierta.
+		<br><br>
+		<strong>Etapa</strong> 2.- Especificar el nivel de significancia que se va a utilizar. El nivel de significancia del 5%, entonces se rechaza la hipótesis nula solamente si el resultado muestral es tan diferente del valor hipotético que una diferencia de esa magnitud o mayor, pudiera ocurrir aleatoria mente con una probabilidad de 1.05 o menos.
+		<br><br>
+		<strong>Etapa</strong> 3.- Elegir la estadística de prueba. La estadística de prueba puede ser la estadística muestral (el estimador no segado del parámetro que se prueba) o una versión transformada de esa estadística muestral. Por ejemplo, para probar el valor hipotético de una media poblacional, se toma la media de una muestra aleatoria de esa distribución normal, entonces es común que se transforme la media en un valor z el cual, a su vez, sirve como estadística de prueba.
+		<br><br>
+		<strong>Etapa</strong> 4.- Establecer el valor o valores críticos de la estadística de prueba. Habiendo especificado la hipótesis nula, el nivel de significancia y la estadística de prueba que se van a utilizar, se produce a establecer el o los valores críticos de estadística de prueba. Puede haber uno o más de esos valores, dependiendo de si se va a realizar una prueba de uno o dos extremos.
+		<br><br>
+		<strong>Etapa</strong> 5.- Determinar el valor real de la estadística de prueba. Por ejemplo, al probar un valor hipotético de la media poblacional, se toma una muestra aleatoria y se determina el valor de la media muestral. Si el valor crítico que se establece es un valor de z, entonces se transforma la media muestral en un valor de z.
+		<br><br>
+		<strong>Etapa</strong> 6.- Tomar la decisión. Se compara el valor observado de la estadística muestral con el valor (o valores) críticos de la estadística de prueba. Después se acepta o se rechaza la hipótesis nula. Si se rechaza ésta, se acepta la alternativa; a su vez, esta decisión tendrá efecto sobre otras decisiones de los administradores operativos, como por ejemplo, mantener o no un estándar de desempeño o cuál de dos estrategias de mercadotecnia utilizar.
+		<br><br>
+		La distribución apropiada de la prueba estadística se divide en dos regiones: una región de rechazo y una de no rechazo. Si la prueba estadística cae en esta última región no se puede rechazar la hipótesis nula y se llega a la conclusión de que el proceso funciona correctamente.
+		<br><br>
+		Al tomar la decisión con respecto a la hipótesis nula, se debe determinar el valor crítico en la distribución estadística que divide la región del rechazo (en la cual la hipótesis nula no se puede rechazar) de la región de rechazo. A hora bien el valor crítico depende del tamaño de la región de rechazo.
+	</p>
+	<h1><strong>Pasos de la prueba de hipótesis</strong></h1>
+	<ul>
+		<li><p>Expresar la hipótesis nula.</p></li>
+		<li><p>Expresar la hipótesis alternativa</p></li>
+		<li><p>Especificar el nivel de significancía</p></li>
+		<li><p>Determinar el tamaño de la muestra</p></li>
+		<li><p>Establecer los valores críticos que establecen las regiones de rechazo de las de no rechazo.</p></li>
+		<li><p>Determinar la prueba estadística.</p></li>
+		<li><p>Coleccionar los datos y calcular el valor de la muestra de la prueba estadística apropiada.</p></li>
+		<li><p>Determinar si la prueba estadística ha sido en la zona de rechazo a una de no rechazo.</p></li>
+		<li><p>Determinar la decisión estadística.</p></li>
+		<li><p>Expresar la decisión estadística en términos del problema.</p></li>
+	</ul>
+	<br><br>
+</div>
+
+{% endblock %}

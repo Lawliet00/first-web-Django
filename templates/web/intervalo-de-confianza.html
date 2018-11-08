@@ -1,0 +1,89 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>INTERVALO DE CONFIANZA</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+
+<div class="changes-info contendor-info">
+	<br>
+	<p>
+		Dada una variable aleatoria con <strong>distribución Normal</strong> N(μ, σ), el objetivo es la construcción de un intervalo de confianza para el parámetro μ, basado en una muestra de tamaño n de la variable. 
+
+		Desde el punto de vista didáctico hemos de considerar dos posibilidades sobre la desviación típica de la variable: que sea conocida o que sea desconocida y tengamos que estimarla a partir de la muestra. El caso de σ conocida, ya comentado anteriormente, no pasa de ser un caso académico con poca aplicación en la práctica, sin embargo es útil desde del punto de vista didáctico.
+	</p>
+	<br>
+	<h1 align="center"><strong>CASO DE VARIANZA CONOCIDA</strong></h1>
+	<br>
+	<p>
+		Dada una muestra X1, ..., Xn, el estadístico
+	</p>
+	<br>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal1.gif" alt="">
+	</div>
+	<br>
+	<p>
+		se distribuye según una Normal estándar. Por tanto, aplicando el método del pivote podemos construir la expresión
+	</p>
+	<br>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal2.gif" alt="">	
+	</div>
+	<br>
+	<p>
+		donde zα/2 es el valor de una distribución Normal estándar que deja a su derecha una probabilidad de α/2, de la que se deduce el intervalo de confianza
+	</p>
+	<br>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal3.gif" alt="">
+	</div>
+	<br>
+	<h1 align="center"><strong>EJEMPLO</strong></h1>
+
+	<p>
+		<strong>Planteamiento:</strong>
+
+		Supongamos que tenemos una variable aleatoria que sigue una distribución Normal N(µ; σ) donde la varianza es un valor fijo conocido σ2 = σ20. Nuestro objetivo es, dada una muestra aleatoria simple de tamaño n de la variable obtener un intervalo de confianza con nivel de confianza del 95 % para el parámetro µ de la distribución.
+	</p>
+	<p>
+		<strong>Desarrollo de la construcción</strong>
+
+		Utilizaremos la propiedad de que la media muestral sigue una distribución Normal de parámetros y, por tanto, si construimos el estadístico
+	</p>
+	<br>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal37.gif" alt="">
+	</div>
+	<br>
+	<p>
+		su distribución es una Normal estándar N(0, 1). Es importante que sea una distribución <strong>conocida e independiente</strong> del parámetro que queremos estimar µ, puesto que esto nos permite una vez construida la expresión siguiente
+	</p>
+	<br>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal35.gif" alt="">
+	</div>
+	<br>
+	<p>
+		determinar, de manera independiente de µ el valor  zα/2 que delimita una probabilidad del 95 % dentro del intervalo centrado en cero (-zα/2; zα/2). En este caso, para la distribución N(0, 1), el valor es aproximadamente 1,96.
+	</p>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal39.jpg" alt="">
+	</div>
+	<br>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal36.gif" alt="">
+	</div>
+	<br>
+	<p>
+		Sólo nos resta despejar µ de la expresión anterior para obtener el intervalo definitivo
+	</p>
+	<div align="center">
+		<img src="http://www.ub.edu/stat/GrupsInnovacio/Statmedia/demo/Temas/Capitulo8/Images/normal40.gif" alt="">
+	</div>
+	<br><br>
+</div>
+
+{% endblock %}

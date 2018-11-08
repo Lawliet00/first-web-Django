@@ -1,0 +1,130 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>DISTRIBUCIÓN CHI-CUADRADO</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+
+<div class="changes-info contendor-info">
+	<p>
+		la distribución ji-cuadrada es la distribución muestral de s2. O sea que si se extraen todas las muestras posibles de una población normal y a cada muestra se le calcula su varianza, se obtendrá la distribución muestral de varianzas.
+
+		Para estimar la varianza poblacional o la desviación estándar, se necesita conocer el estadístico X2. Si se elige una muestra de tamaño n de una población normal con varianza , el estadístico:
+
+		<br><br>
+		tiene una distribución muestral que es una distribución ji-cuadrada con gl=n-1 grados de libertad y se denota X2 (X es la minúscula de la letra griega ji). El estadístico ji-cuadrada esta dado por: 
+	</p>
+	<div align="center">
+		<img src="https://lh3.googleusercontent.com/k9WXfQxsAwLefAZuxJrwoP1ESgTfHT7jXtqWhIetlfBk35gki1ZhtslX1Lb3gzkcUdPUWzcEmnFDWLdXEDrI56ElxQnUdWBQ6A0M5McV9oFv-lwJuA=w170" alt="">
+	</div>
+	<p>
+		donde n es el tamaño de la muestra, s2 la varianza muestral y  la varianza de la población de donde se extrajo la muestra. El estadístico ji-cuadrada también se puede dar con la siguiente expresión: 
+	</p>
+	<h1><strong>Propiedades de las distribuciones ji-cuadrada</strong></h1>
+	<br>
+	<p>
+		Los valores de X2 son mayores o iguales que 0.
+		La forma de una distribución X2 depende del gl=n-1. En consecuencia, hay un número infinito de distribuciones X2.
+		El área bajo una curva ji-cuadrada y sobre el eje horizontal es 1.
+		Las distribuciones X2 no son simétricas. Tienen colas estrechas que se extienden a la derecha; esto es, están sesgadas a la derecha.
+		Cuando n>2, la media de una distribución X2 es n-1 y la varianza es 2(n-1).
+		El valor modal de una distribución X2 se da en el valor (n-3).
+La siguiente figura ilustra tres distribuciones X2. Note que el valor modal aparece en el valor (n-3) = (gl-2).
+	</p>
+	<div align="center">
+		<img src="https://lh5.googleusercontent.com/rieLWkQoctXgy-5TpUZGapI3BsAE6a32JC0GRj5_c7yU9z7DDE_P-vld9UioUaobHG9t7CPaH_0IoNz8FJvXxqu13V3MXTY4aZCISo-BB_N7WgRS68o=w773" alt="">
+	</div>
+	<p>
+		La función de densidad de la distribución X2 esta dada por: 
+	</p>
+	<div align="center">
+		<img src="https://lh4.googleusercontent.com/ABucx6oOXlroI3fd9GNKk4gmhiquP81PCn4u_SCqwUR5tM4Kv852_y8_qmRqMPFHaRE2zvlIBA06C1hjRQElzDxBYFcrol1CK_WjjFzw9MdkN2ODEA=w271" alt="">
+	</div>
+	<p>
+		para x>0
+		<br>
+		La tabla que se utilizará para estos apuntes es la del libro de probabilidad y estadística de Walpole, la cual da valores críticos  (gl) para veinte valores especiales de . Para denotar el valor crítico de una distribución X2 con gl grados de libertad se usa el símbolo  (gl); este valor crítico determina a su derecha un área de  bajo la curva X2 y sobre el eje horizontal. Por ejemplo para encontrar X20.05(6) en la tabla se localiza 6 gl en el lado izquierdo y a o largo del lado superior de la misma tabla.
+	</p>
+	<div align="center">
+		<img src="https://lh6.googleusercontent.com/6aLqe7a12gxVNmt8IoD7N1KAfm0o5E9gt50c6ztWLBqMgDliHmUzth7cPAFoQISDWzqNpxg4RS3d_K6UpQMC9xdbHk3biW81uZgOk8kf7wsaLOTAknU=w371" alt="">
+	</div>
+	<p>
+		Cálculo de Probabilidad
+
+		El cálculo de probabilidad en una distribución muestral de varianzas nos sirve para saber como se va a comportar la varianza o desviación estándar en una muestra que proviene de una distribución normal.
+
+		Ejemplos:
+
+		Suponga que los tiempos requeridos por un cierto autobús para alcanzar un de sus destinos en una ciudad grande forman una distribución normal con una desviación estándar =1 minuto. Si se elige al azar una muestra de 17 tiempos, encuentre la probabilidad de que la varianza muestral sea mayor que 2.
+		Solución:
+		Primero se encontrará el valor de ji-cuadrada correspondiente a s2=2 como sigue:
+	</p>
+	<div align="center">
+		<img src="https://lh3.googleusercontent.com/7zawZ091Txn9JMMqNq_ZCQ_uZsjfcB0gi50AdkH-fxFlGPqhH_fnqsjwPiPTfAhOezkdaC5p1LARCtQK6-pAWuTd6x1mFeUBSvlaxh_PzbSZkrT7GA=w371" alt="">
+		<img src="https://lh5.googleusercontent.com/3UOxIgZBdCaJvoosQouZ-k8SYHZWQbmCfJmzzfDS7BOWHVhy7FPHm3lfMAna7kg0ZLIFLQC79kUZFP9AYfQlny7dHTMmNY2WrhGT8q2f4B0eXvffmw=w673" alt="">
+	</div>
+	<p>
+		El valor de 32 se busca adentro de la tabla en el renglón de 16 grados de libertad y se encuentra que a este valor le corresponde un área a la derecha de 0.01. En consecuencia, el valor de la probabilidad es P(s2>2) 
+		<br><br>
+		1 Encuentre la probabilidad de que una muestra aleatoria de 25 observaciones, de una población normal con varianza, tenga una varianza muestral:
+	</p>
+	<ul>
+		<li><p>Mayor que 9.1</p></li>
+		<li><p>Entre 3.462 y 10.745</p></li>
+		<li><p>Primero se procederá a calcular el valor de la ji-cuadrada:</p></li>
+	</ul>
+
+	<div align="center">
+		<img src="https://lh4.googleusercontent.com/qY2OLVaui0OYzHk5j4OtYGKHWRuBKhTt96IYP56A_rydZLgdVgNPzVaTDv3uhcKwapGOdBAGtjbp4zQDke5fm9diTcYF3OeZoGePp_V8EnXQ_rboag=w371" alt="">
+		<img src="https://lh6.googleusercontent.com/oodLGNrJ52U17ROEulsG76ALn6Z7mVLzKZudpyPXzyCLAdKLSy5z_4qoF-5TIvfaywMGPdJAsOCUmyNHWjBiofWZ7nbyQTZC04oJy0X8hokQP_qdVf77=w371" alt="">
+		<img src="https://lh6.googleusercontent.com/vUanclcBBVc8xqnqtSoDi8gDV8oPPLAhT-8BYzpDMxPtWljyJPCRfcDvaigjVxjqcfUcXojd7AxBl-jby6lnDhsJZSsBGgdmPqt6JT13zSj1edjPoA=w371" alt="">
+	</div>
+	<br>
+	<p>
+		Al buscar este número en el renglón de 24 grados de libertad nos da un área a la derecha de 0.05. Por lo que la P(s2 >9.1) = 0.05
+		<br>
+		Se calcularán dos valores de ji-cuadrada:
+		Aquí se tienen que buscar los dos valores en el renglón de 24 grados de libertad. Al buscar el valor de 13.846 se encuentra un área a la derecha de 0.95. El valor de 42.98 da un área a la derecha de 0.01. Como se está pidiendo la probabilidad entre dos valores se resta el área de 0.95 menos 0.01 quedando 0.94.
+		<br>
+		Por lo tanto la P(3.462  s2  10.745) = 0.94
+	</p>
+	<div align="center">
+		<img src="https://lh4.googleusercontent.com/lT3w1t68uPR1EhvQyAvtJuuXHO-_HBT-zE1nscNok_y5750hfJ85WFPIl4nKzeIbd-jdJsu1nXTNYU8PSLjGTlsFQz8GvSBAcHqPckebh2tAPRt6rg=w773" alt="">
+	</div>
+	<br>
+	<p>
+		Estimación de la Varianza
+		<br>
+		Para poder estimar la varianza de una población normal se utilizará la distribución ji-cuadrada.
+	</p>
+	<div align="center">
+		<img src="https://lh4.googleusercontent.com/Kbgc2JQEg0U19O0oBhVJnQUQYbU3R0iglVhSymCbewywsDvwmMcIGPhXd0Da0uB10U3nJxLZR27zwmTOQzB1D-AygaZpg1Mg2OMQeviADNx4Z2NBWGQV=w170" alt="">
+		<p>
+			Al despejar esta fórmula la varianza poblacional nos queda: 
+		</p>
+		<img src="https://lh3.googleusercontent.com/Bv0saO1YBXkvP8JTgcZ3shVpGpI_BWQQTcDfqeSNLiwYsabpcohtuXVju5OSWG8y6A3AI1f2x_N-6Ost9weYhJfKH1FTnbXYTTDR9NCAmN4R7BDXxQA=w170" alt="">
+	</div>
+	<p>
+		Los valores de X2 dependerán de nivel de confianza que se quiera al cual le llamamos 1-a  . Si nos ubicamos en la gráfica se tiene:
+	</p>
+	<div align="center">
+		<img src="https://lh6.googleusercontent.com/UfCj7JGelBMZtb1h6LOa9wDMv4s_p_lXm_4TKWWAcaoRXib-5sQOanjA2Sk_lKpMDvolWjQBVYvzq4SbbNNarc7Se7zxyRst_tTDYTh41LsLNQVvxac=w371" alt="">
+	</div>
+
+	<h1 align="center"><strong>VIDEO DEMOSTRATIVO</strong></h1>
+	<div align="center">
+		<iframe width="853" height="480" src="https://www.youtube.com/embed/gHkMGcn2MsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<br>
+		<p>Para mas videos relacionados visita este canal de youtube <strong>Educatina</strong></p>
+	</div>
+	<br>
+	<div align="center">
+		<iframe width="853" height="480" src="https://www.youtube.com/embed/N05HcQ4z0Xg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<br>
+		<p>Para mas videos relacionados visita este canal de youtube <strong>Dr. Alejandro Macias</strong></p>
+	</div>
+</div>
+
+{% endblock %}

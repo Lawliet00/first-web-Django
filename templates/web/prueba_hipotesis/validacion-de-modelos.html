@@ -1,0 +1,54 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>VALIDACIÓN DE MODELOS</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+<div class="changes-info contendor-info">
+	<p>
+		La validación de un modelo se puede definir como la demostración de su exactitud para una aplicación concreta. En este sentido, la exactitud es la ausencia de error sistemático y aleatorio: en metrología se conocen habitualmente como fidelidad y precisión respectivamente.
+		<br><br>
+		Todos los modelos son, por su propia naturaleza, representaciones incompletas del sistema del que pretenden ser modelo, pero a pesar de esta limitación pueden ser útiles. Se puede encontrar información general sobre el trabajo con modelos matemáticos en diversos libros de texto teóricos y aplicados. Doucet y Sloep (1992) ofrecen una introducción muy buena a la realización de pruebas de modelos. Estos autores distinguen entre confirmación del modelo (es decir, que se demuestra que es digno de crédito; admisible) y verificación del modelo (es decir, que se demuestra que es verdadero). El libro de McCullagh y Nelder sobre modelos lineales (1989) es una fuente valiosa de información sobre los métodos de creación de modelos estadísticos y en él se describen algunos principios generales para la aplicación de los modelos matemáticos, destacando tres principios para el creador de modelos:
+		<br><br>
+	</p>
+	<ul>
+		<li>
+			<p>Todos los modelos son erróneos, pero algunos son más útiles que otros.</p>
+		</li>
+		<li>
+			<p>No hay que enamorarse de un modelo con la exclusión de otros.</p>
+		</li>
+		<li>
+			<p>Hay que comprobar cuidadosamente el ajuste de un modelo a los datos.</p>
+		</li>
+	</ul>
+	<p>
+		Una vez conocidos los valores de m, es necesario realizar una validación de este modelo.
+		<br><br>
+		Se debe cuantificar qué tan adecuadamente el modelo describe los datos (observaciones o Simulaciones) para los cuales fue aplicado y como es el ajuste. Antes de proceder a evaluar el modelo obtenido es necesario re–examinar la formulación del problema para detectar posibles errores y determinar la consistencia de las expresiones matemáticas. La siguiente etapa consiste en evaluar algunos estadísticos de prueba como el coeficiente de correlación y los resultados de una prueba F; un análisis de varianza y un análisis de residuos también son de gran utilidad en esta etapa.
+		<br><br>
+		En la evaluación de resultados se pueden variar los parámetros de entrada y verificar el comportamiento de los resultados, y si es posible, utilizar datos históricos para reconstruir el pasado y comparar ´estos con los resultados del modelo.
+		<br><br>
+		Finalmente es necesario verificar si las condiciones o supuestos iniciales coinciden con los resultados obtenidos, para esto es necesario el uso de pruebas de bondad de ajuste. Hay dos factores importantes que se debe tener en cuenta en esta etapa; Los resultados obtenidos generalmente son el resultado de la conjunción de varios factores como tiempo, dinero y trabajo en grupo; por tanto es importante obtener la mayor cantidad de información y dar a conocer los resultados para que sean de utilidad. Los valores obtenidos son el resultado de un trabajo consciente, por lo tanto se merecen un análisis real y objetivo.
+		<br><br>
+		La regresión y el ANOVA no se detienen cuando el modelo se ajusta. Usted debería examinar las gráficas de residuos y otros estadísticos de diagnóstico para determinar si el modelo es adecuado y si se cumplen los supuestos de la regresión. Si el modelo no es adecuado, representará incorrectamente los datos. Por ejemplo:
+		<br><br>
+	</p>
+	<ul>
+		<li>
+			<p>Los errores estándar de los coeficientes podrían estar sesgados, conduciendo a valores t y p incorrectos.</p>
+		</li>
+		<li>
+			<p>Los coeficientes pueden tener el signo incorrecto.</p>
+		</li>
+		<li>
+			<p>El modelo puede verse afectado por uno o dos puntos.</p>
+		</li>
+	</ul>
+	<br><br>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>ESTIMACIÓN DE PARÁMETROS</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+
+<div class="changes-info contendor-info">
+    <br>
+    <p>
+        La teoría clásica de la Inferencia Estadística trata de los métodos por los cuales se selecciona una muestra de una población y, basándose en las pruebas de las muestras, se trata de:
+    </p>
+    <ul>
+        <li>
+            <p>Estimar el valor de un parámetro desconocido, por ejemplo q.</p>
+        </li>
+        <li>
+            <p>Verificar si q es o no igual a cierto valor predeterminado, por ejemplo q 0.</p>
+        </li>
+    </ul>
+    <p>
+        El primero de estos dos procedimientos, de inferir de una muestra a una población, se llama estimación de un parámetro; el segundo, prueba de una hipótesis acerca de un parámetro.
+        Dentro del primer procedimiento, la estimación de un parámetro puede tener por resultado un solo punto (estimación puntual), o un intervalo dentro del cual exista cierta probabilidad de encontrarlo (estimación por intervalos).
+        Un estimador puntual es un único punto o valor, el cual se considera va a estimar a un parámetro. La expresión E() = m sugiere que el único valor de  es un estimador puntual insesgado o no viciado de m.
+    </p>
+    <p>
+        Un estimador por intervalo se construye sobre el concepto de un estimador puntual, pero además, proporciona algún grado de exactitud del estimador. Como el término lo sugiere, un estimador por intervalo es un rango o banda dentro de la cual el parámetro se supone va a caer.
+    </p>
+    <h1 align="center"><strong>VIDEO DEMOSTRATIVO</strong></h1>
+    <div align="center">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/RQEVuluT2Lc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br><br><br>
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/KYY6Z1SPLmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <p>Para mas videos relacionados visita este canal de youtube <strong>Alejandro RAMIREZ RIOS</strong></p>
+
+    </div>
+
+    <br><br>
+</div>
+
+{% endblock %}

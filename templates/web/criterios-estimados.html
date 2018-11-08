@@ -1,0 +1,84 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>CRITERIOS ESTIMADOS</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+<div class="changes-info contendor-info">
+	<p>
+		En inferencia estadística se llama estimación al conjunto de técnicas que permiten dar un valor aproximado de un parámetro de una población a partir de los datos proporcionados por una muestra. Por ejemplo, una estimación de la media de una determinada característica de una población de tamaño N podría ser la media de esa misma característica para una muestra de tamaño n. 
+		<br><br>
+		La estimación se divide en tres grandes bloques, cada uno de los cuales tiene distintos métodos que se usan en función de las características y propósitos del estudio: 
+		<br><br>
+	</p>
+	<ul>
+		<li>
+			<p>Estimación puntual
+				<ul>
+					<li>
+						<p>Método de los momentos</p>
+					</li>
+					<li>
+						<p>Método de la máxima verosimilitud</p>
+					</li>
+					<li>
+						<p>Método de los mínimos cuadrados</p>
+					</li>
+				</ul>	
+			</p>
+		</li>
+		<li>
+			<p>
+				Estimación por intervalos
+			</p>
+		</li>
+		<li>
+			<p>
+				Estimación bayesiana
+			</p>
+		</li>
+	</ul>
+
+	<h1 align="center"><strong>Estimador</strong></h1>
+	<p>
+		Un estimador es una regla que establece cómo calcular una estimación basada en las mediciones contenidas en una muestra estadística.
+	</p>
+	<h1 align="center"><strong>Estimación puntual</strong></h1>
+	<p>
+		Consiste en la estimación del valor del parámetro mediante un sólo valor, obtenido de una fórmula determinada. Por ejemplo, si se pretende estimar la talla media de un determinado grupo de individuos, puede extraerse una muestra y ofrecer como estimación puntual la talla media de los individuos. Lo más importante de un estimador, es que sea un estimador eficiente. Es decir, que sea insesgado(ausencia de sesgos) y estable en el muestreo o eficiente (varianza mínima) Estimación puntual. Sea X una variable poblacional con distribución Fθ , siendo θ desconocido. El problema de estimación puntual consiste en, seleccionada una muestra X1, ..., Xn, encontrar el estadístico T(X1, ..., Xn) que mejor estime el parámetro θ. Una vez observada o realizada la muestra, con valores x1, ..., xn, se obtiene la estimación puntual de θ, T(x1, ..., xn) = ˆ θ.
+		<br><br>
+		Método de máxima verosimilitud: consiste en tomar como valor del parámetro aquel que maximice la probabilidad de que ocurra la muestra observada. Si X1, ..., Xn es una muestra seleccionada de una población con distribución Fθ o densidad fθ(x), la probabilidad de que ocurra una realización x1, ..., xn viene dada por: Lθ(x1, ..., xn) = Yn i=1 fθ(xi)
+		<br><br>
+		A Lθ(x1, ..., xn) se le llama función de verosimilitud.(credibilidad de la muestra observada). Buscamos entonces el valor de θ que maximice la función de verosimilud, y al valor obtenido se le llama estimación por máxima verosimilitud de θ. Nota: si la variable X es discreta, en lugar de fθ(xi ) consideramos la función masa de probabilidad pθ(xi).
+		<br><br>
+		Ejemplo 7.1: Sea X → N(µ, σ), con µ desconocido. Seleccionada una m.a.s. X1, ..., Xn, con realización x1, ..., xn, estimamos el parámetro µ por ambos métodos. Según el método de los momentos: E(X) = Xn i=1 Xi n = − X, y al ser µ = E(X) se obtiene que ˆ µ = − x. Por el método de máxima verosimilitud: Lµ(x1, ..., xn) = Yn i=1 fµ(xi ) = = Yn i=1 1 √ 2πσ e −(xi−µ) 2 2σ
+		<br><br>
+		Estimación por Intervalos de conﬁanza 109 y maximizamos en µ tal función; en este caso resulta más fácil maximizar su logaritmo: lnLµ(x1, ..., xn) = − 1 2σ 2 Xn i=1 (xi − µ) 2 − n ln( √ 2πσ) ∂ ∂µ lnLµ(x1, ..., xn) = 1 σ 2 Xn i=1 (xi − µ) = n − x − nµ σ 2 = 0 ⇐⇒ ˆ µ = −
+	</p>
+	<h1 align="center">
+		<strong>Estimación por intervalos</strong>
+	</h1>
+	<p>
+		<strong>Intervalo de confianza</strong>
+		<br><br>
+		El intervalo de confianza es una expresión del tipo [θ1, θ2] ó θ1 ≤ θ ≤ θ2, donde θ es el parámetro a estimar. Este intervalo contiene al parámetro estimado con un determinado nivel de confianza. Pero a veces puede cambiar este intervalo cuando la muestra no garantiza un axioma o un equivalente circunstancial.
+		<br><br>
+		<strong>Variabilidad del Parámetro</strong>
+		<br><br>
+		Si no se conoce, puede obtenerse una aproximación en los datos aportados por la literatura científica o en un estudio piloto. También hay métodos para calcular el tamaño de la muestra que prescinden de este aspecto. Habitualmente se usa como medida de esta variabilidad la desviación típica poblacional y se denota σ.
+		<br><br>
+		<strong>Error de la estimación</strong>
+		<br><br>
+		Es una medida de su precisión que se corresponde con la amplitud del intervalo de confianza. Cuanta más precisión se desee en la estimación de un parámetro, más estrecho deberá ser el intervalo de confianza y, si se quiere mantener o disminuir el error, más observaciones deberán incluirse en la muestra estudiada. En caso de no incluir nuevas observaciones para la muestra, más error se comete al aumentar la precisión. Se suele llamar E, según la fórmula E = (θ2 - θ1)/2. 
+		<br><br>
+		<strong>Límite de Confianza</strong>
+		<br><br>
+		Es la probabilidad de que el verdadero valor del parámetro estimado en la población se sitúe en el intervalo de confianza obtenido. El nivel de confianza se denota por (1-α), aunque habitualmente suele expresarse con un porcentaje ((1-α)·100%). Es habitual tomar como nivel de confianza un 95% o un 99%, que se corresponden con valores α de 0,05 y 0,01 respectivamente. 
+	</p>
+	<br><br>
+
+</div>
+
+{% endblock %}

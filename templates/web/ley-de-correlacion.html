@@ -1,0 +1,26 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+	<h1 class="subtitle"><strong>LEY DE CORRELACIÓN</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+
+<div class="changes-info contendor-info">
+	<p>
+		También conocido como diagrama de correlación-dispersión o correlación lineal, la ley decorrelación no es más que una herramienta que permite tener una idea de la relación que puede existir entre dos datos diferentes. Para poder ver qué relación existe entre dos datos diferentes se utiliza una gráfica cartesianadonde se permita introducir la intercepción de los datos, de esta manera ver la relación entre ellos, debido a la variedad que existen en los datos, existen variedades de correlaciones,entre ellas se pueden mencionar.
+	</p>
+	<br><br>
+	<p align="center">
+		<strong>Correlación Positiva. </strong>
+		<strong>Correlación Positiva Débil.</strong>
+	</p>
+	<div align="center">
+		<img src="{% static 'images/Ley-Correlacion/positiva.png' %}" alt="">
+		<img src="{% static 'images/Ley-Correlacion/negativa.png' %}" alt="">
+	</div>
+	<br><br>
+</div>
+
+{% endblock %}

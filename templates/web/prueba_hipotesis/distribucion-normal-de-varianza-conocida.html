@@ -1,0 +1,100 @@
+{% extends 'base/template.html' %}
+{% load staticfiles %}
+
+{% block SubTitle %}
+<h1 class="subtitle"><strong>DISTRIBUCIÓN NORMAL DE VARIANZA CONOCIDA</strong></h1><br>
+{% endblock %}
+
+{% block content %}
+<div class="changes-info contendor-info">
+	<p>
+		Esta distribución es frecuentemente utilizada en las aplicaciones estadísticas. Su propio nombre indica su extendida utilización, justificada por las frecuencias o normalidad con la que los ciertos fenómenos tienden a parecerse en su comportamiento a esta distribución.
+		<br><br>
+		Muchas variables aleatorias continuas presentan una función de densidad cuya gráfica tiene forma de campana.
+		<br><br>
+		En otras ocasiones, al considerar distribuciones binomiales, tipo B(n,p), para un mismo valor de p y de valores de n cada vez mayores, se ve que sus polígonos de frecuencias se aproximan a una forma en forma de campana.
+		<br><br>
+		La importancia de esta distribución radica en que permite modelar numerosos fenómenos naturales, sociales y psicológicos. Mientras que los mecanismos que subyacen a gran parte de este tipo de fenómenos son desconocidos, por la enorme cantidad de variables incontrolables que en ellos intervienen, el uso del modelo normal puede justificarse asumiendo que cada observación se obtiene como la suma de unas pocas causas independientes.
+		<br><br>
+		De hecho, la estadística descriptiva sólo permite describir un fenómeno, sin explicación alguna. Para la explicación causal es preciso el diseño experimental, de ahí que al uso de la estadística en psicología y sociología sea conocido como método correlacional.
+		<br><br>
+		La distribución normal también es importante por su relación con la estimación por mínimos cuadrados, uno de los métodos de estimación más simples y antiguos.
+		<br><br>
+		Además, la distribución normal maximiza la entropía entre todas las distribuciones con media y varianza conocidas, lo cual la convierte en la elección natural de la distribución subyacente a una lista de datos resumidos en términos de media muestral y varianza. La distribución normal es la más extendida en estadística y muchos tests estadísticos están basados en una supuesta "normalidad".
+	</p>
+	<br>
+	<h1><strong>Los pasos a seguir para resolver el contraste son:</strong></h1>
+	<br>
+	<p>
+		1) Establecer la hipótesis nula (H0) y la alternativa (H1), de acuerdo con una de las tres posibilidades siguientes:
+	</p>
+	<ul>
+		<li>
+			<p>
+				Contraste bilateral o de dos colas: corresponde a plantear en la alternativa que la media es diferente a un cierto valor prefijado μ0, sin concretar si es mayor o menor.
+				<br>
+				H0: μ = μ0 contra H1: μ ≠ μ0
+			</p>
+		</li>
+		<li>
+			<p>
+				Contraste unilateral izquierdo: corresponde a plantear en la alternativa que la media es inferior a un cierto valor prefijado μ0.
+				<br>
+				H0: μ ≥ μ0 contra H1: μ < μ0
+			</p>
+		</li>
+		<li>
+			<p>
+				Contraste unilateral derecho: corresponde a plantear en la alternativa que la media es mayor que un cierto valor prefijado μ0.
+				<br>
+				H0: μ ≤ μ0 contra H1: μ > μ0
+			</p>
+		</li>
+	</ul>
+	<br>
+	<p>
+		2) Cálculo del estadístico experimental
+		<br><br>
+		En el caso que nos ocupa, no ha de sorprender que el estadístico que corresponde al test óptimo esté relacionado con la media muestral. Bajo H0, la variable observada y su promedio siguen la distribución siguiente:
+		<div align="center">
+			<img src="{% static 'images/Dist-normal/formula11.png' %}" alt="">
+		</div>
+	</p>
+	<p>
+		Si es cierta la hipótesis nula, el estadístico experimental z-exp que debe utilizarse sigue la distribución siguiente:
+		<br>
+		<div align="center">
+			<img src="{% static 'images/Dist-normal/formula12.png' %}" alt="">
+		</div>
+	</p>
+	<br>
+	<p>
+		3) Criterio de decisión
+	</p>
+	<ul>
+		<li>
+			<p>
+				Contraste bilateral o de dos colas: rechazamos la hipótesis nula H 0 si: |Z-exp| ≥ Zα/2
+			</p>
+		</li>
+		<li>
+			<p>
+				Contraste unilateral a la izquierda: rechazamos la hipótesis nula H0 si: Z-exp ≤ − Zα
+			</p>
+		</li>
+		<li>
+			<p>
+				Contraste unilateral a la derecha: rechazamos la hipótesis nula H0 si: Z-exp ≥ Zα
+			</p>
+		</li>
+	</ul>
+	<br>
+	<p>
+		<strong>Nota: </strong>
+		Zα/2 y Zα son los valores críticos asociados a la Normal(0,1) tales que: prob(Z > Zα/2) = α/2 prob(Z > Zα) = α
+	</p>
+
+	<br><br>
+</div>
+
+{% endblock %}
